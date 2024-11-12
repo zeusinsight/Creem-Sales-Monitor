@@ -1,16 +1,16 @@
-# Sales Dashboard
+# Creem Sales Monitor
 
-A simple dashboard to display sales data on an ESP32 using a TFT screen.
+A simple monitor to display creem sales on an ESP32 using a Lilygo screen.
 
 ## Features:
 - Displays total sales, latest sale, and total sales amount
-- Connects to a server to fetch sales data via HTTP request
+- Connects to your server to fetch sales data via HTTP request
 - Displays sales data on a TFT screen
 - Adds and saves new sales to a JSON file on the server
 
 ## Requirements:
 - Arduino IDE
-- ESP32 Board Package
+- ESP32 Lilygo T-Display-S3
 - Libraries: WiFi, HTTPClient, ArduinoJson, TFT_eSPI
 
 ## Setup:
