@@ -39,13 +39,16 @@ A simple dashboard to display sales data on an ESP32 using a TFT screen.
    ```
    
 5. Upload Code: Open creem_monitoring.ino in Arduino IDE. Click Upload to compile and upload the code to ESP32.
-Server Setup:
-To handle the sales data on the server, you'll need to create two API endpoints: one to fetch sales and one to store new sales.
+   
+Server Setup: To handle the sales data on the server, you'll need to create two API endpoints: one to fetch sales from a JSON file and one to store new sales.
+
+Very important: Remember to add your endpoint to a Creem webhook
 
 1. Endpoint to Fetch Sales Data
 You can create an endpoint to fetch sales data from a JSON file like this:
 
 ```js
+// /api/sales/
 import { NextResponse } from "next/server";
 import { promises as fs } from 'fs';
 
@@ -74,6 +77,8 @@ This endpoint will read from sales.json and return the sales data in JSON format
 You can use the following code to store new sales to the sales.json file:
 
 ```js
+// /api/sales/webhook
+// Add this code to your existing webhook endpoint
 const SALES_FILE_PATH = './public/sales.json';
 
 async function storeSale(order) {
